@@ -19,7 +19,8 @@ public class WindowManager : MyStack<Window>
 
     public override Window Pop()//+1 jeremy , coreting , arribasplata
     {
-         OnElementRemoved?.Invoke(Peek());
+        if(Peek().window.activeSelf == true)
+            OnElementRemoved?.Invoke(Peek());
          return base.Pop();
     }
 
