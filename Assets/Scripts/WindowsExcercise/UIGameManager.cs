@@ -48,13 +48,28 @@ public class UIGameManager : MonoBehaviour
 
     private void HideCurrentPanel(InputAction.CallbackContext context)
     {
-       // wmanager.Pop().window.activeself  false;
-        //->pop
-        //-> verifico si la window de este pop esta activada o desactvida
-        //-> si esta activa funciono normalmente
-        //-> si ya esta desactivada hago una llamada recursiva haciendo pop hasta que encuentro uno que pueda desactivar
+        CloseTopRecursive();
         Debug.Log("Escape");
     }
+
+    private void CloseTopRecursive()
+    {
+        if (wmanager.Count == 0) return;
+
+        Window top = wmanager.Peek();
+
+       
+        if (!top.window.activeSelf) //Si no está activa → sacar y seguir buscando
+        {
+            wmanager.Pop();
+            CloseTopRecursive();
+            return;
+        }
+
+        // Si está activa → solo cerrar UNA
+        wmanager.Pop();
+    }
+
 
     public void BtnOpenPanel(GameObject panel)
     {
