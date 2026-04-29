@@ -17,7 +17,7 @@ public class UIStats : MonoBehaviour
     public void UpdateUI()
     {
         hpText.text = "HP: " + data.hp;
-        strText.text = "STR: " + data.str;
+        strText.text = "STRENGTH: " + data.str;
         levelText.text = "Level: " + data.level;
     }
 

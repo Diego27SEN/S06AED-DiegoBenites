@@ -23,4 +23,13 @@ public class UIConfiguration : MonoBehaviour
         volumeText.text = "Volume: " + data.volume;
     }
 
+    public void UpdateAll()
+    {
+        data.vsync = !data.vsync;
+        data.fpsLimit += 30;
+        data.resolution = "1920x1080";
+        volumeText.text = "Volume: " + data.volume + "%";
+
+        UpdateUI();
+    }
 }

@@ -24,5 +24,13 @@ public class UIInventory : MonoBehaviour
 
     }
 
+    public void UpdateAll()
+    {
+        data.gold += 100;
+        data.potions += 1;
+        data.keys += 1;
+        data.Ammo += 10;
 
+        UpdateUI();
+    }
 }

@@ -17,6 +17,9 @@ public class UIGameManager : MonoBehaviour
 
     private void OnEnable()
     {
+        if (inputs == null)
+            inputs = new InputSystem_Actions();
+
         inputs.Enable();
         inputs.UI.Escape.performed += HideCurrentPanel;
 

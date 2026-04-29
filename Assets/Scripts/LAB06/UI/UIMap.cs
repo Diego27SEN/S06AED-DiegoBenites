@@ -21,5 +21,13 @@ public class UIMap : MonoBehaviour
 
     }
 
+    public void UpdateAll()
+    {
+        data.currentZone = "New Zone";
+        data.discoveredZones += 1;
+        data .discoveredTreasures += 2;
+
+        UpdateUI();
+    }
 
 }
